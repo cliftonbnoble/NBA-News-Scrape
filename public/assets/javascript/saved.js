@@ -57,7 +57,7 @@ $(document).ready(function () {
         "<a class='btn btn-success delete'>",
         "Delete From Saved",
         "</a>",
-        "<a class='btn notes'>Article Notes</a>",
+        "<a class='btn btn-info notes'>Article Notes</a>",
         "</h3>",
         "</div>",
         "<div class='panel-body'>",
