@@ -23,7 +23,7 @@ module.exports = function(router) {
             if (!docs || docs.insertedCount === 0) {
                 res.json({
                     message: "No new articles TODAY!"
-                })
+                });
             } else {
                 res.json({
                     message: "Added " + docs.insertedCount + " new articles!"
@@ -34,7 +34,7 @@ module.exports = function(router) {
     router.get("/api/headlines", function(req, res) {
         var query = {};
         if (req.query.saved) {
-            query = req.saved;
+            query = req.query;
         }
         headlinesController.get(query, function(data) {
             res.json(data);
@@ -53,6 +53,7 @@ module.exports = function(router) {
             res.json(data);
         });
     });
+    
     router.get("/api/notes/:headlines_id?", function(req, res) {
         var query = {};
         if (req.params.headline_id) {

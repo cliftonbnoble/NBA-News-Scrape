@@ -13,8 +13,11 @@ module.exports = {
                 articles[i].date = makeDate();
                 articles[i].saved = false;
             }
+            console.log("FETCH WORKING!!!")
             Headline.collection.insertMany(articles, {ordered:false}, function (err, docs) {
+                console.log("FETCH WORKING!!!")
                 cb(err, docs);
+                console.log("CB WORKING!!!")
             });
         });
 

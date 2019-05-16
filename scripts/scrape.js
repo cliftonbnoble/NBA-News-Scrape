@@ -4,7 +4,11 @@
 var request = require("request");
 var cheerio = require("cheerio");
 
+
+
 var scrape = function (cb) {
+
+    console.log("working!!!")
 
     request("https://old.reddit.com/r/nba/", function(err, res, body){
         var $ = cheerio.load(body);
@@ -21,7 +25,9 @@ var scrape = function (cb) {
                 summary: link
             };
             articles.push(dataToAdd);
+            
     })
+    console.log("Articles", articles)
     cb(articles);
 });
 };

@@ -1,21 +1,41 @@
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
+<nav class="navbar-fluid navbar-expand-lg navbar-inverse">
+  <a class="navbar-brand" href="/">Reddit/NBA Scraper</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/saved">Saved</a>
+      </li>
+    </ul>
+    <span class="navbar-text float-right">
+      <button class="btn btn-sm btn-success scrape-new" type="button">Scrape New</button>
+    </span>
+  </div>
+</nav>
+
+{{!-- <nav class="navbar navbar-inverse">
+    <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">Mongo Scraper</a>
-        </div>
-        <ul class="nac navbar-nav">
+            <a class="navbar-brand" href="/">Mongo/Reddit NBA Scraper</a>
+            </div>
+        <ul class="nav navbar-nav">
             <li class="active"><a href="/">Home</a></li>
             <li><a href="/saved">Saved Articles</a></li>
             <li><a class="btn btn-danger scrape-new">Scrape New Articles</a></li>
         </ul>
     </div>
-</nav>
-<div class="jumbotron text-center">
+</nav> --}}
+<div class="jumbotron caption">
     <div class="overlay">
     </div>
     <div class="background-image">
     </div>
-    <div class="caption">
+    <div class="caption1 text-center">
         <h1>Mongo Scraper</h1>
         <p>NBA Scraper Edition</p>
     </div>
@@ -28,8 +48,9 @@
         <p>NBA SubReddit Scraper</p>
     </div>
 </footer>
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="http://code.jquery.com/jquery-3.4.0.js" integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo=" crossorigin="anonymous"></script>
+{{!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="../../public/assets/javascript/index.js"
+<script src="../../assets/javascript/index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>

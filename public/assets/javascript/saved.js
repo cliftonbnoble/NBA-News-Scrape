@@ -15,33 +15,34 @@ $(document).ready(function () {
         $.get("/api/headlines?saved=true").then(function(data) {
             if (data && data.length) {
                 renderArticles(data);
+                console.log(data);
             } else {
                 renderEmpty();
             }
         });
     };
 
-    function renderArticles() {
+    function renderArticles(articles) {
          var articlePanels = [];
 
          for (let i = 0; i < articles.length; i++) {
              articlePanels.push(createPanel(articles[i]));
          }
          articleContainer.append(articlePanels);
+         console.log("Saved article panel working")
     }
 
     function renderEmpty() {
         var emptyAlert = 
-        $(["<div class='alert alert-warning text-center;>",
+        $(["<div class='alert alert-warning text-center'>",
         "<h4>Uh oh. Looks like we don't have any new articles.</h4>",
         "</div>",
         "<div class='panel panel-default'>",
         "<div class='panel-heading text-center'>",
-        "<h3>What WOuld You Like To Do?</h3>",
+        "<h3>What Would You Like To Do?</h3>",
         "</div>",
         "<div class='panel-body text-center'>",
-        "<hr><a class='scrape-new'>Try Scraping New Articles</a></h4>",
-        "<h4><a href='/saved'>Go to Saved Articles</a></h4>",
+        "<h4><a href='/'>Browse Articles</a></h4>",
         "</div>",
         "</div>"].join(""));
         articleContainer.append(emptyAlert)
@@ -53,9 +54,10 @@ $(document).ready(function () {
         "<div class='panel-heading'>",
         "<h3>",
         article.headline,
-        "<a class='btn btn-success save'>",
-        "Save Article",
+        "<a class='btn btn-success delete'>",
+        "Delete From Saved",
         "</a>",
+        "<a class='btn notes'>Article Notes</a>",
         "</h3>",
         "</div>",
         "<div class='panel-body'>",
@@ -108,7 +110,7 @@ $(document).ready(function () {
         })
     }
 
-function renderNotesList() {
+function renderNotesList(data) {
     var notesToRender = [];
     var currentNote;
     if (!data.notes.length) {
@@ -121,9 +123,9 @@ function renderNotesList() {
     } else {
         for (let i = 0; i < data.notes.length; i++) {
             currentNote = $([
-                "<li class='list-group-item'>",
+                "<li class='list-group-item note'>",
                 data.notes[i].noteText,
-                "<button class='btn btn-danger note-delete;>x</button>",
+                "<button class='btn btn-danger note-delete'>x</button>",
                 "</li>"
             ].join(""));
             currentNote.children("button").data("_id", data.notes[i]._id);
@@ -160,4 +162,4 @@ function handleNoteDelete() {
     });
 }
 
-})
+});
