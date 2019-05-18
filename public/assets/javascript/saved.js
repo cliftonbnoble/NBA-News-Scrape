@@ -62,6 +62,9 @@ $(document).ready(function () {
         "</div>",
         "<div class='panel-body'>",
         article.summary,
+        "  <a href=",
+        article.summary,
+        ">Link to Article</a>",
         "</div>",
         "</div>"].join(""));
     
